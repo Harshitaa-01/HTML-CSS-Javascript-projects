@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo practice</title>
+    <style>
+        .container{
+            height: 100vh;
+            background: linear-gradient(135deg, rgb(71, 71, 143),rgb(215, 90, 111));
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container .todoDiv{
+            outline: none;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 540px;
+            padding: 25px 20px;
+            background-color: white;
+        }
+        .todoInnerDiv {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background:  #ced5e4;
+            padding-left: 20px;
+            margin-bottom: 25px;
+            border-radius: 30px;
+        }
+        .todoInnerDiv .writeTodo{
+            flex: 1;
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 10px;
+        }
+        .tasksUl li{
+            list-style: none;
+            font-size: 17px;
+            padding: 12px 8px 12px 50px;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+
+            &::before{
+                content: '';
+                position: absolute;
+                height: 28px;
+                width: 28px;
+                border-radius: 50%;
+                background: url(/to-do/media/unchecked.png);
+                background-size: cover;
+                background-position: center;
+                top: 9px;
+                left: 8px;
+            }
+        }     
+        .tasksUl li.checked{
+            color: #555;
+            text-decoration: line-through;
+        }   
+        .tasksUl li.checked::before{
+            background: url(/to-do/media/checked.png);
+            background-size: cover;
+        }   
+        .tasksUl li span{
+            position: absolute;
+            right: 0;
+            top: 5px;
+            width: 40px;
+            height: 40px;
+            font-size: 22px;
+            color: #555;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+
+            &:hover{
+                background: #d0d9eb;
+            }
+        }        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="todoDiv">
+            <h2 class="heading">TODO list</h2>
+
+            <div class="todoInnerDiv">
+                <input type="text" class="writeTodo" placeholder="Add Task">
+                <button class="addBtn">Add</button>
+            </div>
+        
+            <ul class="tasksUl">
+                <!-- <li class="checked">Task1</li>
+                <li>Task2</li>
+                <li>Task3</li> -->
+            </ul>
+    </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
